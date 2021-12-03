@@ -3,15 +3,20 @@ const con = require('./connection');
 
 const usuarios = async () => {
   const db = await con();
-  const usuario = await db.collection('usuario').find().toArray();
+  const usuarios = await db.collection('usuario').find().toArray();
+  return usuarios;
+};
+
+const buscaLogin = async ( email) => {
+  const db = await con();
+  const usuario = await db.collection('usuario').findOne({ email });
   return usuario;
 };
 
-const buscaUsuario = async (id) => {
-  if (!ObjectId.isValid(id)) return null;
+const buscaUsuario = async (nome, email) => {
   const db = await con();
-  const recipe = await db.collection('usuario').findOne({ _id: ObjectId(id) });
-  return recipe;
+  const usuario = await db.collection('usuario').findOne({ nome, email });
+  return usuario;
 };
 
 const cadastrar = async (nome, email, senha) => {
@@ -36,4 +41,5 @@ module.exports = {
   buscaUsuario,
   cadastrar,
   atualizarUsuario,
+  buscaLogin,
 };
