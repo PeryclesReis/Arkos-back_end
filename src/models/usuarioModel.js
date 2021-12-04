@@ -1,11 +1,5 @@
-const { ObjectId } = require('mongodb');
 const con = require('./connection');
-
-const usuarios = async () => {
-  const db = await con();
-  const usuarios = await db.collection('usuario').find().toArray();
-  return usuarios;
-};
+// const axios = require('axios');
 
 const buscaLogin = async ( email) => {
   const db = await con();
@@ -26,18 +20,31 @@ const cadastrar = async (nome, email, senha) => {
   return novoUsuario.ops[0];
 };
 
-const atualizarUsuario = async (id, {nome, email, senha}) => {
-  if (!ObjectId.isValid(id)) return null;
+const atualizarUsuario = async (nome, email, novoNome, novoEmail) => {
   const db = await con();
   await db.collection('usuario')
-    .updateOne({ _id: ObjectId(id) }, { $set: { nome, email, senha } });
+    .updateOne({ nome, email }, { $set: { nome: novoNome, email: novoEmail } });
 
-  const usuario = await buscaUsuario(id);
+  const usuario = await buscaUsuario(novoNome, novoEmail);
   return usuario;
 };
 
+// testes feitos com endpoint da api abaixo
+// const usuarios = async () => {
+//   const { data } = await axios.get('https://fakestoreapi.com/users').then(res=>res);
+//   const { address:_, ...usuarios } = data;
+
+//   return usuarios;
+// };
+
+// const buscaUsuario = async (id) => {
+//   const { data } = await axios.get(`https://fakestoreapi.com/users/${id}`).then(res=>res);
+//   const { address:_, ...usuarios } = data;
+
+//   return usuarios;
+// };
+
 module.exports = {
-  usuarios,
   buscaUsuario,
   cadastrar,
   atualizarUsuario,

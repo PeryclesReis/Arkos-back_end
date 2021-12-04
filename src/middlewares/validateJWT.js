@@ -29,6 +29,4 @@ const validUser = async (req, res, next) => {
   }
 };
 
-module.exports = {
-  validUser,
-};
+module.exports = validUser;
