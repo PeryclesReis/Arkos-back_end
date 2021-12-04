@@ -58,4 +58,4 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 #### Perycles dos Reis F. 🚀
 
-Feito com ❤️ por Perycles Floriano 👋🏽 Entre em contato!
+Feito com ❤️ por Perycles Floriano.
