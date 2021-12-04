@@ -23,7 +23,7 @@ Este projeto foi criado com o intuíto de fazer integração com o front-end do 
 
 ## Como usar
 
-Para quem deseja utilizar esta parte do projeto, deverá ter algumas coisas tecnologias ou IDEs pré-instaldas em sua máquina para o pleno funcionamento do Back-End.
+Para quem deseja utilizar esta parte do projeto, deverá ter algumas tecnologias ou IDEs pré-instaldas em sua máquina para o pleno funcionamento do Back-End.
 
 <a id="preRequisitos"></a>
 
@@ -38,7 +38,7 @@ Estes são os passos para que rode o back-end para usá-lo:
 
 Após verificar os passos anteriores, faça o clone deste repositório para sua máquina e instale todas as Libs que são necessárias através do package.json com o `npm install`.
 
-Após instalar as libs do projeto rode o comando `npm run`, e pronto o back-end estará pronto para uso.
+Após instalar as libs do projeto rode o comando `npm start`, e pronto o back-end estará pronto para uso.
 
 ---
 <a id="tecnologias"></a>
