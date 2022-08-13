@@ -49,7 +49,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 - Node.js
 - Express
-- JavaScript
+- NestJs
 
 ---
 <a id="autor"></a>
